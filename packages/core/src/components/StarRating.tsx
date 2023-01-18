@@ -16,6 +16,7 @@ type Props = {
   rating?: number;
   defaultValue?: number;
   isEditable?: boolean;
+  isRounded?: boolean;
   activeColor?: string;
   inactiveColor?: string;
   theme: Theme;
@@ -30,6 +31,7 @@ const StarRating: React.FC<React.PropsWithChildren<Props>> = ({
   rating = 0,
   defaultValue,
   isEditable = false,
+  isRounded = false,
   activeColor,
   inactiveColor,
   style,
@@ -60,7 +62,7 @@ const StarRating: React.FC<React.PropsWithChildren<Props>> = ({
     [onPress]
   );
 
-  const ratingRounded = Math.round(localRating * 2) / 2;
+  const ratingRounded = Math.round(localRating * (2-Number(isRounded))) / (2 - Number(isRounded));
 
   return (
     <View style={[styles.container, style]} {...rest}>
