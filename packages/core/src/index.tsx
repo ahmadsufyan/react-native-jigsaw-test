@@ -35,6 +35,7 @@ export {
   ActionSheetCancel,
 } from "./components/ActionSheet";
 export { Swiper, SwiperItem } from "./components/Swiper";
+export { CardSwiper, CardSwiperItem } from "./components/CardSwiper";
 
 export {
   Center,
